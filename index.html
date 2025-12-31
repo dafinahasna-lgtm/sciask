@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SciAsk</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D2B48C; /* Nuansa coklat */
+            background-image: url('https://punyaacerita.wordpress.com/wp-content/uploads/2015/10/32298-0_663_382.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: multiply; /* Untuk transparansi efek */
+            opacity: 0.8; /* Transparansi 80% */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page {
+            display: none;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        .title {
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #8B4513; /* Coklat gelap */
+        }
+
+        .description {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #654321;
+        }
+
+        .start-button {
+            font-weight: bold;
+            font-size: 1.5em;
+            padding: 10px 20px;
+            background-color: #A0522D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .start-button:hover {
+            background-color: #8B4513;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            color: #696969; /* Abu tua */
+            font-size: 0.8em;
+            width: 100%;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .option {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .option img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .option h3 {
+            margin: 10px 0;
+            color: #8B4513;
+            cursor: pointer;
+        }
+
+        .option p {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .chat-page {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .chat-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        .chat-form button {
+            padding: 10px;
+            background-color: #A0522D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chat-form button:hover {
+            background-color: #8B4513;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="page1" class="page active">
+        <h1 class="title">SciAsk</h1>
+        <p class="description">Science made simple, just ask</p>
+        <button class="start-button" onclick="showPage('page2')">Start!</button>
+        <div class="footer">
+            © 2025 SciAsk - Dafina Hasna
+        </div>
+    </div>
+
+    <div id="page2" class="page">
+        <div class="options">
+            <div class="option">
+                <img src="https://allaboutmatematika.wordpress.com/wp-content/uploads/2015/08/filosofi-rumus-matematika-berita-broadcast.jpg" alt="Aljabar">
+                <h3 onclick="window.open('https://www.mathway.com/', '_blank')">mathway</h3>
+                <p>Jika kamu kebingungan terkait materi atau soal matematika, kamu bisa melihat penyelesaiannya di sini. Cukup masukkan soalmu, dan sistem akan menampilkan jawaban lengkap beserta langkah-langkahnya agar kamu lebih paham.</p>
+            </div>
+            <div class="option">
+                <img src="https://asimtot.wordpress.com/wp-content/uploads/2010/12/grafik-hati.jpg" alt="Grafik Matematika">
+                <h3 onclick="window.open('https://www.geogebra.org/', '_blank')">geogebra</h3>
+                <p>Bingung memahami materi matematika? GeoGebra membantumu mempelajari konsep melalui visualisasi dan simulasi interaktif agar lebih mudah dipahami.</p>
+            </div>
+            <div class="option">
+                <img src="https://media.istockphoto.com/id/1470125802/id/vektor/siswa-melakukan-eksperimen-sains-di-laboratorium.jpg?s=170667a&w=0&k=20&c=TnApWFiAIaqySsI6_fFeH_z84b_c3LMzMzOEx6V92k8=" alt="Simulasi Sains">
+                <h3 onclick="window.open('https://phet.colorado.edu/', '_blank')">PHet</h3>
+                <p>Jika kamu kebingungan memahami materi sains, kamu bisa menggunakan PhET untuk mencoba simulasi interaktif. Melalui percobaan virtual, kamu dapat melihat langsung bagaimana suatu konsep bekerja sehingga lebih mudah dipahami.</p>
+            </div>
+            <div class="option">
+                <img src="https://st3.depositphotos.com/3514613/32215/i/450/depositphotos_322151146-stock-photo-bearded-man-in-casual-white.jpg" alt="AI Chat">
+                <h3 onclick="showPage('page3')">Tanya AI</h3>
+                <p>Kamu masih bingung dengan konsep dan pembahasan soal yang kamu kerjakan? Yuk, tanyakan pada AI kami yang siap membantu menjelaskan langkah demi langkah dengan cara yang mudah dipahami!</p>
+            </div>
+        </div>
+        <a href="#page1" class="back-link" onclick="showPage('page1')">Selamat Belajar!</a>
+    </div>
+
+    <div id="page3" class="page">
+        <div class="chat-page">
+            <h2>Tanya AI</h2>
+            <form class="chat-form" onsubmit="submitQuestion(event)">
+                <textarea id="question" placeholder="Masukkan pertanyaanmu di sini..." required></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+            <a href="#page2" class="back-link" onclick="showPage('page2')">Kembali</a>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function submitQuestion(event) {
+            event.preventDefault();
+            const question = document.getElementById('question').value;
+            const encodedQuestion = encodeURIComponent(question);
+            window.open(`https://chatgpt.com/?q=${encodedQuestion}`, '_blank');
+        }
+    </script>
+</body>
+</html>
